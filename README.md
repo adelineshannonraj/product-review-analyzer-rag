@@ -38,11 +38,17 @@ These are installed automatically by the `pip install` lines at the top of the s
 ## Setup
 
 1. Set your API key as an environment variable before running:
-   ```bash
+```bash
    export BOLTIOT_API_KEY="your-api-key-here"
-   ```
+```
 2. Run the script in a Google Colab notebook (or adapt the file-upload step for local use).
 3. When prompted, upload a `.csv` or `.xlsx` file containing reviews. **The first column of the file is assumed to contain the review text.**
+
+## Current Status
+
+> **Note:** The API key originally used for the GPT-based analysis step (`BOLTIOT_API_KEY`) is no longer valid, so this repository is not currently runnable end-to-end without a fresh key (Bolt IoT or OpenAI).
+> The sentiment analysis and FAISS indexing steps run independently of the key and work as-is — only the final `analyze_reviews_with_gpt()` RAG query step requires a valid key.
+> To run the full pipeline, set your own key as described in Setup above.
 
 ## How It Works
 
@@ -71,6 +77,8 @@ These are installed automatically by the `pip install` lines at the top of the s
    - Type `quit` to exit
 
 ## Usage Example
+
+*Illustrative example of expected input/output format (not a captured run — see Current Status above):*
 
 ```
 Enter query (or 'quit'): What are the most common complaints about battery life?
